@@ -219,9 +219,9 @@ export default function Index() {
             </nav>
             <Button 
               className="bg-primary hover:bg-primary/90 text-white"
-              onClick={() => window.location.href = '/dashboard'}
+              onClick={() => window.location.href = '/login'}
             >
-              Панель управления
+              Войти
             </Button>
           </div>
         </div>

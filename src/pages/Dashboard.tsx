@@ -21,6 +21,13 @@ export default function Dashboard() {
     '[12:35:45] [Info] Player Alex joined the game',
   ]);
 
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('userName');
+    window.location.href = '/login';
+  };
+
   const servers = [
     { id: 'server-1', name: 'Мой первый сервер', status: 'online', players: '5/30', plan: 'Профи ⚔️', ip: '123.45.67.89:25565' },
     { id: 'server-2', name: 'Тестовый сервер', status: 'offline', players: '0/10', plan: 'Житель 🧑', ip: '123.45.67.90:25565' },
@@ -98,10 +105,16 @@ export default function Dashboard() {
               Панель управления
             </a>
           </nav>
-          <Button variant="outline" size="sm">
-            <Icon name="User" size={16} className="mr-2" />
-            Профиль
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm">
+              <Icon name="User" size={16} className="mr-2" />
+              Профиль
+            </Button>
+            <Button variant="ghost" size="sm" onClick={handleLogout}>
+              <Icon name="LogOut" size={16} className="mr-2" />
+              Выход
+            </Button>
+          </div>
         </div>
       </header>
 
