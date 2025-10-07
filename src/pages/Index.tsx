@@ -54,7 +54,7 @@ export default function Index() {
   const plans = [
     {
       id: 'micro',
-      name: 'Micro',
+      name: 'Нуб 🌱',
       price: '149',
       oldPrice: '299',
       players: '5',
@@ -64,7 +64,7 @@ export default function Index() {
     },
     {
       id: 'starter',
-      name: 'Starter',
+      name: 'Попугай 🦜',
       price: '199',
       oldPrice: '399',
       players: '8',
@@ -74,7 +74,7 @@ export default function Index() {
     },
     {
       id: 'basic',
-      name: 'Basic',
+      name: 'Житель 🧑',
       price: '299',
       oldPrice: '499',
       players: '10',
@@ -84,7 +84,7 @@ export default function Index() {
     },
     {
       id: 'standard',
-      name: 'Standard',
+      name: 'Тигр 🐯',
       price: '449',
       oldPrice: '649',
       players: '20',
@@ -94,7 +94,7 @@ export default function Index() {
     },
     {
       id: 'pro',
-      name: 'Pro',
+      name: 'Профи ⚔️',
       price: '599',
       oldPrice: '799',
       players: '30',
@@ -105,7 +105,7 @@ export default function Index() {
     },
     {
       id: 'advanced',
-      name: 'Advanced',
+      name: 'Голем 🗿',
       price: '799',
       oldPrice: '999',
       players: '50',
@@ -115,7 +115,7 @@ export default function Index() {
     },
     {
       id: 'premium',
-      name: 'Premium',
+      name: 'Драгон 🐲',
       price: '1199',
       oldPrice: '1599',
       players: '100',
@@ -125,7 +125,7 @@ export default function Index() {
     },
     {
       id: 'elite',
-      name: 'Elite',
+      name: 'Бог ⚡',
       price: '1699',
       oldPrice: '2199',
       players: '150',
@@ -135,7 +135,7 @@ export default function Index() {
     },
     {
       id: 'ultimate',
-      name: 'Ultimate',
+      name: 'Эндермен 👾',
       price: '2499',
       oldPrice: '3299',
       players: '200',
@@ -145,7 +145,7 @@ export default function Index() {
     },
     {
       id: 'enterprise',
-      name: 'Enterprise',
+      name: 'Нотч 👑',
       price: '4999',
       oldPrice: '6499',
       players: 'Неограничено',
@@ -155,7 +155,7 @@ export default function Index() {
     },
     {
       id: 'network',
-      name: 'Network',
+      name: 'Хиробрин 👻',
       price: '9999',
       oldPrice: '12999',
       players: 'Неограничено',
@@ -165,7 +165,7 @@ export default function Index() {
     },
     {
       id: 'custom',
-      name: 'Custom',
+      name: 'Креатив ✨',
       price: 'По запросу',
       oldPrice: '',
       players: 'Любое',
