@@ -217,7 +217,10 @@ export default function Index() {
               <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
               <a href="#contacts" className="text-muted-foreground hover:text-foreground transition-colors">Контакты</a>
             </nav>
-            <Button className="bg-primary hover:bg-primary/90 text-white">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white"
+              onClick={() => window.location.href = '/dashboard'}
+            >
               Панель управления
             </Button>
           </div>
