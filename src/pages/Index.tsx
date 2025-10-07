@@ -53,6 +53,26 @@ export default function Index() {
 
   const plans = [
     {
+      id: 'micro',
+      name: 'Micro',
+      price: '149',
+      oldPrice: '299',
+      players: '5',
+      ram: '1 GB',
+      storage: '5 GB SSD',
+      features: ['Базовая защита DDoS', 'Еженедельные бэкапы', 'Веб-панель управления']
+    },
+    {
+      id: 'starter',
+      name: 'Starter',
+      price: '199',
+      oldPrice: '399',
+      players: '8',
+      ram: '1.5 GB',
+      storage: '8 GB SSD',
+      features: ['Базовая защита DDoS', 'Ежедневные бэкапы', 'Веб-панель управления', 'FTP доступ']
+    },
+    {
       id: 'basic',
       name: 'Basic',
       price: '299',
@@ -61,6 +81,16 @@ export default function Index() {
       ram: '2 GB',
       storage: '10 GB SSD',
       features: ['Базовая защита DDoS', 'Ежедневные бэкапы', 'Веб-панель управления', 'FTP доступ']
+    },
+    {
+      id: 'standard',
+      name: 'Standard',
+      price: '449',
+      oldPrice: '649',
+      players: '20',
+      ram: '3 GB',
+      storage: '20 GB SSD',
+      features: ['Усиленная защита DDoS', 'Бэкапы 2 раза в день', 'Веб-панель управления', 'FTP доступ', 'Установка модов']
     },
     {
       id: 'pro',
@@ -74,6 +104,16 @@ export default function Index() {
       popular: true
     },
     {
+      id: 'advanced',
+      name: 'Advanced',
+      price: '799',
+      oldPrice: '999',
+      players: '50',
+      ram: '6 GB',
+      storage: '35 GB NVMe',
+      features: ['Продвинутая защита DDoS', 'Бэкапы каждые 4 часа', 'Приоритетная поддержка', 'Неограниченные моды', 'Выделенный IP']
+    },
+    {
       id: 'premium',
       name: 'Premium',
       price: '1199',
@@ -82,6 +122,56 @@ export default function Index() {
       ram: '8 GB',
       storage: '50 GB NVMe',
       features: ['Максимальная защита DDoS', 'Бэкапы каждый час', 'VIP поддержка 24/7', 'Неограниченные моды', 'Выделенный IP', 'Кастомные плагины']
+    },
+    {
+      id: 'elite',
+      name: 'Elite',
+      price: '1699',
+      oldPrice: '2199',
+      players: '150',
+      ram: '12 GB',
+      storage: '75 GB NVMe',
+      features: ['Максимальная защита DDoS', 'Бэкапы каждые 30 минут', 'VIP поддержка 24/7', 'Dedicated vCPU', 'Выделенный IP', 'Кастомные плагины', 'Приоритетная очередь']
+    },
+    {
+      id: 'ultimate',
+      name: 'Ultimate',
+      price: '2499',
+      oldPrice: '3299',
+      players: '200',
+      ram: '16 GB',
+      storage: '100 GB NVMe',
+      features: ['Максимальная защита DDoS', 'Бэкапы каждые 15 минут', 'Персональный менеджер', 'Dedicated CPU', 'Несколько IP адресов', 'Кастомная конфигурация', 'Мгновенная поддержка']
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise',
+      price: '4999',
+      oldPrice: '6499',
+      players: 'Неограничено',
+      ram: '32 GB',
+      storage: '250 GB NVMe',
+      features: ['Корпоративная защита', 'Непрерывные бэкапы', 'Персональная команда поддержки', 'Dedicated Server', 'Кластерная архитектура', 'SLA 99.99%', 'Кастомизация под ключ']
+    },
+    {
+      id: 'network',
+      name: 'Network',
+      price: '9999',
+      oldPrice: '12999',
+      players: 'Неограничено',
+      ram: '64 GB+',
+      storage: '500 GB NVMe',
+      features: ['Максимальная защита', 'Мультисерверная сеть', 'Команда DevOps', 'Выделенное оборудование', 'Геораспределенная сеть', 'SLA 99.99%', 'Индивидуальные решения']
+    },
+    {
+      id: 'custom',
+      name: 'Custom',
+      price: 'По запросу',
+      oldPrice: '',
+      players: 'Любое',
+      ram: 'Любой',
+      storage: 'Любой',
+      features: ['Полностью кастомное решение', 'Индивидуальная архитектура', 'Персональная команда', 'Выделенная инфраструктура', 'Интеграции на заказ', 'Консультации 24/7']
     }
   ];
 
@@ -211,60 +301,67 @@ export default function Index() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Тарифы</h2>
             <p className="text-xl text-muted-foreground">Выберите оптимальный план для вашего проекта</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {plans.map((plan, index) => (
               <Card 
                 key={plan.id}
                 className={`relative border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 animate-slide-up ${
                   plan.popular 
-                    ? 'border-primary shadow-xl shadow-primary/20 scale-105' 
+                    ? 'border-primary shadow-xl shadow-primary/20' 
                     : 'border-border hover:border-primary/50'
                 }`}
-                style={{ animationDelay: `${index * 150}ms` }}
+                style={{ animationDelay: `${index * 50}ms` }}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-1 animate-glow">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <Badge className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-0.5 text-xs animate-glow">
                       ⭐ Популярный
                     </Badge>
                   </div>
                 )}
-                <CardHeader className="text-center pb-8">
-                  <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                  <div className="mb-4">
-                    <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="text-xl mb-2">{plan.name}</CardTitle>
+                  <div className="mb-3">
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         {plan.price}
                       </span>
-                      <span className="text-muted-foreground">₽/мес</span>
+                      {plan.price !== 'По запросу' && <span className="text-sm text-muted-foreground">₽/мес</span>}
                     </div>
-                    <div className="text-sm text-muted-foreground line-through mt-1">
-                      {plan.oldPrice} ₽
-                    </div>
+                    {plan.oldPrice && (
+                      <div className="text-xs text-muted-foreground line-through mt-0.5">
+                        {plan.oldPrice} ₽
+                      </div>
+                    )}
                   </div>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center justify-center gap-2">
-                      <Icon name="Users" size={16} className="text-primary" />
-                      <span>До {plan.players} игроков</span>
+                  <div className="space-y-1 text-xs">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <Icon name="Users" size={14} className="text-primary" />
+                      <span>{plan.players === 'Неограничено' || plan.players === 'Любое' ? plan.players : `До ${plan.players}`} {plan.players !== 'Неограничено' && plan.players !== 'Любое' && 'игроков'}</span>
                     </div>
-                    <div className="flex items-center justify-center gap-2">
-                      <Icon name="Cpu" size={16} className="text-primary" />
+                    <div className="flex items-center justify-center gap-1.5">
+                      <Icon name="Cpu" size={14} className="text-primary" />
                       <span>{plan.ram} RAM</span>
                     </div>
-                    <div className="flex items-center justify-center gap-2">
-                      <Icon name="HardDrive" size={16} className="text-primary" />
+                    <div className="flex items-center justify-center gap-1.5">
+                      <Icon name="HardDrive" size={14} className="text-primary" />
                       <span>{plan.storage}</span>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Icon name="CheckCircle2" size={20} className="text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2">
+                    {plan.features.slice(0, 4).map((feature, i) => (
+                      <li key={i} className="flex items-start gap-1.5">
+                        <Icon name="CheckCircle2" size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-xs">{feature}</span>
                       </li>
                     ))}
+                    {plan.features.length > 4 && (
+                      <li className="text-xs text-muted-foreground text-center pt-1">
+                        +{plan.features.length - 4} возможностей
+                      </li>
+                    )}
                   </ul>
                   <Button 
                     className={`w-full ${
@@ -272,10 +369,10 @@ export default function Index() {
                         ? 'bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white' 
                         : 'bg-primary hover:bg-primary/90 text-white'
                     }`}
-                    size="lg"
+                    size="sm"
                     onClick={() => setSelectedPlan(plan.id)}
                   >
-                    Выбрать план
+                    Выбрать
                   </Button>
                 </CardContent>
               </Card>
