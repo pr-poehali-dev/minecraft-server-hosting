@@ -107,7 +107,7 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-minecraft': 'linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%)'
+				'gradient-halloween': 'linear-gradient(135deg, #0a0000 0%, #1a0a00 50%, #2a1500 100%)'
 			}
 		}
 	},
